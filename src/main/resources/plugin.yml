@@ -1,0 +1,4 @@
+name: Netherfix
+version: ${project.version}
+main: koral.netherfix.Netherfix
+api-version: 1.13
