@@ -61,7 +61,6 @@ public final class Netherfix extends JavaPlugin implements Listener {
         return entity.getLocation().getBlock().getType() == Material.NETHER_PORTAL;
     }
 
-    private static boolean run = true;
     int i = 0;
 
     public void runNetherPortalTimer() {
@@ -71,20 +70,13 @@ public final class Netherfix extends JavaPlugin implements Listener {
                         i++;
                         if (i > getConfig().getInt("time")) {
                             player.performCommand(getConfig().getString("commandaftertime"));
+                            i =0;
                         }
                     }
                 });
                 }, 0, 20);
     }
 }
-                    /*
-                if (event.getCause() == PlayerPortalEvent.TeleportCause.NETHER_PORTAL) {
-                    Bukkit.getScheduler().scheduleSyncDelayedTask(this, () -> {
-                        p.sendMessage(ChatColor.YELLOW + "Zostales przetelportowany na SPAWN, bo nie ruszales sie przez 10 sekund w portalu." +ChatColor.AQUA + "blokowanie w portalach jest nielegalne.");
-                        p.performCommand("spawn");
-                        //ta
-
-                    },20L); } */
 
 
 
